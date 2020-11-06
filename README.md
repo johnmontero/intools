@@ -28,6 +28,7 @@ Upgrade
 -------
 ```console
 ❯❯❯ export cwd=`pwd` && cd $HOME/opt/intools/src && git pull origin master && cd $cwd && unset cwd
+❯❯❯ $HOME/opt/intools/venv/bin/python $HOME/opt/intools/src/setup.py install
 ```
 
 List Access Keys
