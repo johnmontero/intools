@@ -3,7 +3,7 @@ InTools - Is a simple Infrastructure tool for task
 
 
 Installation
-============
+------------
 ```console
 ❯❯❯ mkdir -r $HOME/opt/intools
 ❯❯❯ git clone https://github.com/johnmontero/intools.git $HOME/opt/intools/src
@@ -24,14 +24,14 @@ Commands:
   version           Show version of InTools.
 ```
 
-Update
-======
+Upgrade
+-------
 ```console
 ❯❯❯ export cwd=`pwd` && cd $HOME/opt/intools/src && git pull origin master && cd $cwd && unset cwd
 ```
 
 List Access Keys
-================
+----------------
 ```console
 ❯❯❯ intools list-accesskeys --username juan.perez
 InTools - Is a simple Infrastructure tool for task.
@@ -46,7 +46,7 @@ List access keys for Username: juan.perez
 ```
 
 Delete Access Key
-=================
+-----------------
 ```console
 ❯❯❯ intools delete-accesskey --username juan.perez --access-key-id=AKIA5QWRRGNXISUDNQPT
 InTools - Is a simple Infrastructure tool for task.
@@ -58,7 +58,7 @@ Deletion the access key was successful
 ```
 
 Create Access Key
-=================
+-----------------
 ```console
 ❯❯❯ intools create-accesskey --username juan.perez --email=jmonteroc@gmail.com
 InTools - Is a simple Infrastructure tool for task.
@@ -74,7 +74,7 @@ Send notification to email: jmonteroc@gmail.com
 ```
 
 Create Access Key with flag --force
-===================================
+-----------------------------------
 ```console
 ❯❯❯ intools create-accesskey --username juan.perez --email=jmonteroc@gmail.com --force
 InTools - Is a simple Infrastructure tool for task.
@@ -93,7 +93,7 @@ Send notification to email: jmonteroc@gmail.com
 ```
 
 Config file
-===========
+-----------
 ```console
 vim $HOME/.config/intools/config.yaml
 
@@ -107,11 +107,11 @@ email:
 ```
 
 Add/Delete libraries
-====================
+--------------------
 This is done in the requirements.txt file.
 
 How to add commands
-===================
+-------------------
 To add commands you must follow the following steps:
 * Create a file inside the "commands" folder
 * Write the code following the definition of the library: https://click.palletsprojects.com/en/7.x/
