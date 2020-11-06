@@ -11,6 +11,9 @@ setup(
     name             = 'InTools',
     description      = 'InTools - Is a simple Infrastructure tool for task.',
     packages         = find_packages(),
+    package_data     = {
+        'intools': ['templates/*']
+    },
     author           = 'intools',
     author_email     = 'intools [at] gmail.com',
     scripts          = ['bin/intools'],
