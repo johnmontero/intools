@@ -5,11 +5,11 @@ InTools - Is a simple Infrastructure tool for task
 Installation
 ============
 ```console
-❯❯❯ mkdir -r $(HOME)/opt/intools
-❯❯❯ git clone https://github.com/johnmontero/intools.git $(HOME)/opt/intools/src
-❯❯❯ python3 -m venv $(HOME)/opt/intools/venv
-❯❯❯ $(HOME)/opt/intools/venv/bin/python $(HOME)/opt/intools/src/setup.py install
-❯❯❯ sudo ln -s $(HOME)/opt/intools/venv/bin/intools /usr/bin/intools
+❯❯❯ mkdir -r $HOME/opt/intools
+❯❯❯ git clone https://github.com/johnmontero/intools.git $HOME/opt/intools/src
+❯❯❯ python3 -m venv $HOME/opt/intools/venv
+❯❯❯ $HOME/opt/intools/venv/bin/python $HOME/opt/intools/src/setup.py install
+❯❯❯ sudo ln -s $HOME/opt/intools/venv/bin/intools /usr/bin/intools
 ❯❯❯ intools --help
 
 Usage: intools [OPTIONS] COMMAND [ARGS]...
@@ -24,6 +24,11 @@ Commands:
   version           Show version of InTools.
 ```
 
+Update
+======
+```console
+❯❯❯ export cwd=`pwd` && cd $HOME/opt/intools/src && git pull origin master && cd $cwd && unset cwd
+```
 
 List Access Keys
 ================
