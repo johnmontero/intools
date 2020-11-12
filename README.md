@@ -9,7 +9,7 @@ Installation
 ❯❯❯ git clone https://github.com/johnmontero/intools.git $HOME/opt/intools/src
 ❯❯❯ python3 -m venv $HOME/opt/intools/venv
 ❯❯❯ $HOME/opt/intools/venv/bin/python $HOME/opt/intools/src/setup.py install
-❯❯❯ sudo ln -s $HOME/opt/intools/venv/bin/intools /usr/bin/intools
+❯❯❯ sudo ln -s $HOME/opt/intools/venv/bin/intools /usr/local/bin/intools
 ❯❯❯ intools --help
 
 Usage: intools [OPTIONS] COMMAND [ARGS]...
