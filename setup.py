@@ -2,7 +2,9 @@ import os
 import intools
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
+current_dir = os.path.abspath(os.path.dirname(__file__))
+
+with open(f'{current_dir}/requirements.txt') as f:
     install_requires = f.read().splitlines()
 
 long_description = "InTools"
