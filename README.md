@@ -18,10 +18,11 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  create-accesskey  Create Access Key for User.
-  delete-accesskey  Delete Access Key for User.
-  list-accesskeys   List Access Keys for User.
-  version           Show version of InTools.
+  create-accesskey   Create Access Key for User.
+  delete-accesskey   Delete Access Key for User.
+  list-accesskeys    List Access Keys for User.
+  list-certificates  List Certificates for Region.
+  version            Show version of InTools.
 ```
 
 Upgrade
@@ -91,6 +92,21 @@ Send notification to email: jmonteroc@gmail.com
 +======================+==========================================+===========================+========+
 | AKIA7QWRRGBXC6NXH5TP | FISkZTt5qVnslJGJTVwhwML8WJksXJajHD5EUQIX | 2020-11-05 17:31:23+00:00 | Active |
 +----------------------+------------------------------------------+---------------------------+--------+
+```
+
+List Certificates
+-----------------
+```console
+❯❯❯ intools list-certificates --region=us-east-1  --exclude-domain=midominio.pe --exclude-domain=dominios.pe
+InTools - Is a simple Infrastructure tool for task.
+
+List certificates for Region: us-east-1
+Exclude domains: midominio.pe, dominios.pe
+
+DomainName             : server
+SubjectAlternativeNames: server
+NotAfter               : 2022-04-07 13:57:16-05:00
+CertificateArn         : arn:aws:acm:us-east-1:029116109030:certificate/a5e8a1b0-2bf5-471f-9569-0b74ddfda1ae
 ```
 
 Config file
