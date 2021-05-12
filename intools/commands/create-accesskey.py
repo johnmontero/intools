@@ -7,9 +7,9 @@ from intools.utils.iam import delete_access_key
 from intools.utils.iam import list_access_keys
 from intools.utils.mail import create_mail_html
 from intools.utils.mail import build_msg_to_mail
-from intools.utils.mail import send_mail
+from intools.utils.mail import send_mail_by_smtp
 
-def send_to_email(ctx, email, data):
+def send_to_email(ctx, email, data, send_by_ses):
     if email is not None and ctx.config['smtp']['host'].get() is not None:
         email_html = create_mail_html('not-secret-access-key.html', data)
         msg_to_mail = build_msg_to_mail(
@@ -19,12 +19,13 @@ def send_to_email(ctx, email, data):
             email_html
         )
 
-        send_mail(
+        send_mail_by_smtp(
             ctx.config['smtp']['host'].get(),
             ctx.config['smtp']['port'].get(),
-            msg_to_mail
+            msg_to_mail,
+            ctx.config['smtp']['user'].get() if  send_by_ses else None,
+            ctx.config['smtp']['password'].get() if  send_by_ses else None
         )
-
 
 def force_delete_accesskey(username):
     access_keys = list_access_keys(username)
@@ -44,6 +45,7 @@ def force_delete_accesskey(username):
 @click.option('--username', required=True, help='The name of the IAM user that the new key will belong to.')
 @click.option('--email', help='The email of the IAM user to send notification.')
 @click.option('--force', is_flag=True, default=False, help='Force creation of access key.')
+@click.option('--ses', is_flag=True, default=False, help='Send by SES for AWS.')
 @pass_context
 def command(ctx, **kwargs):
     """Create Access Key for User."""
@@ -52,6 +54,7 @@ def command(ctx, **kwargs):
     username = kwargs.get('username')
     email = kwargs.get('email')
     force = kwargs.get('force')
+    send_by_ses = kwargs.get('ses')
 
     click.echo()
     if force:
@@ -86,5 +89,5 @@ def command(ctx, **kwargs):
         )
 
         # Send notification
-        send_to_email(ctx, email, access_key)
+        send_to_email(ctx, email, access_key, send_by_ses)
     click.echo()
