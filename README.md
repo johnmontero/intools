@@ -139,6 +139,23 @@ email:
   email_from: InTools <team@intools.com>
 ```
 
+To use SES you must add the "user" and "password" variables:
+
+```console
+vim $HOME/.config/intools/config.yaml
+
+---
+smtp:
+ host: email-smtp.us-east-1.amazonaws.com
+ port: 25
+ user: CHANGEME
+ password: CHANGEME
+
+email:
+  email_from: InTools <team@intools.com>
+```
+
+
 Add/Delete libraries
 --------------------
 This is done in the requirements.txt file.
