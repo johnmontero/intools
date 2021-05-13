@@ -75,6 +75,22 @@ Send notification to email: jmonteroc@gmail.com
 +----------------------+------------------------------------------+---------------------------+--------+
 ```
 
+Create Access Key with flag --ses
+---------------------------------
+```console
+❯❯❯ intools create-accesskey --username juan.perez --email=jmonteroc@gmail.com --ses
+InTools - Is a simple Infrastructure tool for task.
+
+Create access key for Username: juan.perez
+Send notification to email: jmonteroc@gmail.com
+
++----------------------+------------------------------------------+---------------------------+--------+
+|     AccessKeyId      |             SecretAccessKey              |        CreateDate         | Status |
++======================+==========================================+===========================+========+
+| AKIA7QWRRGBXC6NXH5NP | DISkZTt5qVnslJGJTVwhwML8WJksXJajHD5EUQIX | 2020-11-05 17:24:35+00:00 | Active |
++----------------------+------------------------------------------+---------------------------+--------+
+```
+
 Create Access Key with flag --force
 -----------------------------------
 ```console
